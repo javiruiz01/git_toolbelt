@@ -5,12 +5,14 @@ echo "Refreshing"
 cd $MY_PATH
 echo `pwd`
 
-echo "Do you want to refresh your UPSTREAM? [y/n]"
+echo "Do you want to refresh your UPSTREAM? [Y/n]"
 
-read answer
+read  answer
 
-if [ $answer == "y" ]
+if [ $answer == "n" ]
 then
+	echo "Next question then"
+else
 	echo "GIT FETCH UPSTREAM"
 	git fetch upstream
 	if [ $? -eq 0 ]
@@ -25,19 +27,21 @@ then
 	fi
 fi
 
-echo "Do you want to commit? [y/n]"
+echo "Do you want to commit? [Y/n]"
 
 read commit_answer
 
-if [ $commit_answer == "y" ]
+if [ $commit_answer == "n" ]
 then
+	echo "We're done here"
+else
 	echo "Input your commit:"
 	read commitmssg
 	echo "Adding folder"
 	git add .
 	echo "Making commit"
-	git commit -m '"'"$commitmssg"'"'
-	echo "Do you want to pusheen? [y/n]"
+	git commit -m "$commitmssg"
+	echo "Do you want to pusheen? [y/N]"
 	read pusheen
 	if [ $pusheen == "y" ]
 	then
