@@ -40,13 +40,13 @@ function print_usage() {
 	printf "	-c 		Commit\n"
 	printf "	-u		Refresh upstream\n"
 	printf "			Must already be set\n"
-	printf "	-h 		Display HELP\n"
+	printf "	-h 		Display usage\n"
 	printf "	-f path		Add path to repository\n"
 	printf "\e[32mEXAMPLE:\e[0m\n"
 	printf "	$0 -f /path/to/file -c\n"
 	printf "\e[7m|------------------------------------------------|\e[0m\n"
 	echo "If you don't want to use the options,"
-	echo "please use the refresh.sh script"
+	echo "please use the \e[32mrefresh.sh\e[0m script"
 	return
 }
 
